@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Social Media Dashboard]</title>
+
+
+<style>
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  font-family: calibri;
+  
+}
+
+:root{
+  --bg-color: hsl(230, 17%, 14%);
+  --top-bg-color: hsl(232, 19%, 15%);
+  --heading-color: hsl(0, 0%, 100%);
+  --follower-color: hsl(228, 34%, 66%);
+  --box-bg-color: hsl(228, 28%, 20%);
+  --switch-color: hsl(232, 19%, 15%);
+}
+
+.change{
+  --bg-color: hsl(0, 0%, 100%);
+  --top-bg-color: hsl(225, 100%, 98%);
+  --heading-color: hsl(230, 17%, 14%);
+  --follower-color: hsl(228, 12%, 44%);
+  --box-bg-color: hsl(227, 47%, 96%);
+  --switch-color: hsl(225, 100%, 98%);
+}
+
+img{
+  border-radius:4px;
+  padding: 3px;
+}
+
+  li{
+    list-style-type: none;
+  }
+
+  .overall-con{
+    width: auto;
+    height: 100px;
+    background-color: var(--top-bg-color);
+    padding: 35px 110px 90px 110px;
+  }
+
+  .container{
+    margin-bottom: 40px;
+  }
+
+  .flex-container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .box1 {
+    width: 240px;
+    height:190px;
+    border: none;
+    border-top: 3px solid hsl(210, 78%, 56%);
+    border-radius: 3px;
+    background-color: var(--box-bg-color);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+   
+  }
+
+  .box1:hover, .box2:hover, .box3:hover, .box4:hover, .middle1:hover, .middle2:hover, .middle3:hover, .middle4:hover, .middle5:hover, .middle6:hover, .middle7:hover, .middle8:hover{
+    background-color: hsl(229, 25%, 26%);
+    cursor: pointer;
+  }
+
+  .inner-box1{
+    padding-top: 10px;
+    font-weight: lighter;
+    color: hsl(228, 34%, 66%);
+
+  }
+  .icon{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: 72px;
+    font-weight: bold;
+  }
+
+  .box2{
+    width: 240px;
+    height:190px;
+    border: none;
+    border-top: 3px solid hsl(210, 78%, 56%);
+    border-radius: 3px;
+    background-color: var(--box-bg-color);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .inner-box2{
+    padding-top: 10px;
+    font-weight: lighter;
+    color: hsl(228, 34%, 66%);
+
+  }
+
+  .box3{
+    width: 240px;
+    height:190px;
+    border: none;
+    border-top: 3px solid hsl(356, 69%, 56%);
+    border-radius: 3px;
+    background-color: var(--box-bg-color);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .inner-box3{
+    padding-top: 10px;
+    font-weight: lighter;
+    color: hsl(228, 34%, 66%);
+
+  }
+
+  .box4{
+    width: 240px;
+    height:190px;
+    border: none;
+    border-radius: 3px;
+    border-top: 3px solid hsl(348, 97%, 39%);
+    background-color: var(--box-bg-color);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .inner-box4{
+    padding-top: 10px;
+    font-weight: lighter;
+    color: hsl(228, 34%, 66%);
+  }
+
+  .flex-container2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .middle1{
+    width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+  }
+
+ .middle2{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+
+ .middle3{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+
+ .middle4{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+
+
+ .flex-container3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .middle5{
+    width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+  }
+
+ .middle6{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+
+ .middle7{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+
+ .middle8{
+  width: 240px;
+    border-radius: 3px;
+    height: 110px;
+    background-color: var(--box-bg-color);
+ }
+  
+
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  margin-left: 10px;
+}
+
+.switch input {display:none;}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--switch-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.box{
+  margin-bottom: 15px;
+}
+
+</style>
+
+</head>
+<body class="body">
+
+
+  <div class="overall-con">
+      <div class="firstbg">
+
+        <div class="container">
+
+    <li style="font-size: 30px; color: var(--heading-color); font-weight: bolder;">Social Media Dashboard</li>
+    <li style="float: right; font-weight: bold; color: hsl(0, 0%, 100%);">
+
+      <div style="display: flex; justify-content: space-between;">
+        <span style="color: var(--heading-color);" class="dark-text">Dark Mode</span>
+        <label class="switch">
+        <input type="checkbox" id="theme">
+        <span class="slider round"></span>
+        </label>
+      </div>
+      
+    </li><br>
+    <span style="font-weight: bold; color: var(--follower-color);">Total Followers: 23,004</span>
+
+       </div>
+
+    </div>
+  
+
+
+
+    <div class="flex-container1">
+
+        <div class="box1 box">
+          <div class="inner-box1">
+
+            <div class="icon">
+              <img src="images/icon-facebook.svg" alt="" height="22px" width="22px"> <span style="font-size: 11px;">@nathanf</span> <br>
+              </div>
+
+              <span style="font-weight: bolder; font-size: 55px; color: var(--heading-color);">1987</span><br>
+              <span style="letter-spacing: 5px; font-weight: lighter; font-size: small;">FOLLOWERS</span><br><br>
+              <img src="images/icon-up.svg" alt=""> <span style="color: hsl(163, 72%, 41%); font-weight: bolder; font-size: small;">12 Today</span>
+
+               </div>
+        </div>
+
+
+        <div class="box2 box">
+          <div class="inner-box2">
+
+            <div class="icon">
+              <img src="images/icon-twitter.svg" alt="" height="22px" width="22px"> <span style="font-size: 11px;">@nathanf</span>  <br>
+              </div>
+
+              <span style="font-weight: bolder; font-size: 55px; color: var(--heading-color);">1044</span><br>
+              <span style="letter-spacing: 5px; font-weight: lighter; font-size: small;">FOLLOWERS</span><br><br>
+              <img src="images/icon-up.svg" alt=""> <span style="color: hsl(163, 72%, 41%); font-weight: bolder; font-size: small;">99 Today</span>
+
+               </div>
+        </div>
+
+
+        <div class="box3 box">
+          <div class="inner-box3">
+
+            <div class="icon">
+              <img src="images/icon-instagram.svg" alt="" height="25px" width="25px"> <span style="font-size: 11px;">@realnathanf</span><br>
+              </div>
+
+              <span style="font-weight: bolder; font-size: 55px; color: var(--heading-color);">11k</span><br>
+              <span style="letter-spacing: 5px; font-weight: lighter; font-size: small;">FOLLOWERS</span><br><br>
+              <img src="images/icon-up.svg" alt=""> <span style="color: hsl(163, 72%, 41%); font-weight: bolder; font-size: small;">1099 Today</span>
+
+               </div>
+        </div>
+
+
+        <div class="box4 box">
+          <div class="inner-box4">
+
+            <div class="icon">
+              <img src="images/icon-youtube.svg" alt="" height="22px" width="22px"><span style="font-size: 11px;"> Nathan F.</span> <br>
+              </div>
+
+              <span style="font-weight: bolder; font-size: 55px; color: var(--heading-color);">8239</span><br>
+              <span style="letter-spacing: 5px; font-weight: lighter; font-size: small;">SUBSCRIBERS</span><br><br>
+              <img src="images/icon-down.svg" alt=""> <span style="color: hsl(356, 69%, 56%); font-weight: bolder; font-size: small;">144 Today</span>
+
+               </div>
+        </div>
+
+    </div>
+
+        <h2 style="color: var(--heading-color);">Overview - Today</h2>
+
+        <div class="flex-container2">
+
+
+              <div class="middle1 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+                  <div style="padding: 22px;">
+                    <span style="color: var(--follower-color);">Page Views</span>
+                    <img src="images/icon-facebook.svg" alt="" style="float: right;"><br><br>
+               
+                  
+                    <div style="justify-content: space-between; align-items: center; display: flex;">
+                         <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">87</span>
+
+                 <img src="images/icon-up.svg" alt="" style="float: right; margin-left: 130px; margin-top: 15px;"><span style="float: right; color: hsl(163, 72%, 41%); margin-top: 15px;">3%</span>
+                      
+                </div>
+                  
+                  </div>
+              </div>
+
+
+
+              <div class="middle2 box box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+                  <div style="padding: 22px;">
+                    <span style="color: var(--follower-color);">Likes</span>
+                    <img src="images/icon-facebook.svg" alt="" style="float: right;"><br><br>
+               
+                  
+                    <div style="justify-content: space-between; align-items: center; display: flex;">
+                         <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">52</span>
+                         
+                 <img src="images/icon-down.svg" alt="" style="float: right; margin-left: 130px; margin-top: 15px;"><span style="float: right; color: hsl(356, 69%, 56%); margin-top: 15px;">2%</span>
+                      
+                </div>
+                  
+                  </div>
+              </div>
+
+
+
+              <div class="middle3 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+                <div style="padding: 22px;">
+                  <span style="color: var(--follower-color);">Likes</span>
+                  <img src="images/icon-instagram.svg" alt="" style="float: right;"><br><br>
+             
+                
+                  <div style="justify-content: space-between; align-items: center; display: flex;">
+                       <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">5462</span>
+                       
+               <img src="images/icon-up.svg" alt="" style="float: right; margin-left: 70px; margin-top: 15px;"><span style="float: right; color: hsl(163, 72%, 41%); margin-top: 15px;">2257%</span>
+                    
+              </div>
+                
+                </div>
+              </div>
+
+
+
+              <div class="middle4 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+                <div style="padding: 22px;">
+                  <span style="color: var(--follower-color);">Profile Views</span>
+                  <img src="images/icon-instagram.svg" alt="" style="float: right;"><br><br>
+             
+                
+                  <div style="justify-content: space-between; align-items: center; display: flex;">
+                       <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">52k</span>
+                       
+               <img src="images/icon-up.svg" alt="" style="float: right; margin-left: 90px; margin-top: 15px;"><span style="float: right; color: hsl(163, 72%, 41%); margin-top: 15px;">1375%</span>
+                    
+              </div>
+                
+                </div>
+              </div>
+
+        </div><br>
+
+
+
+
+        <div class="flex-container3">
+
+
+          <div class="middle5 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+            <div style="padding: 22px;">
+              <span style="color: var(--follower-color);">Retweets</span>
+              <img src="images/icon-twitter.svg" alt="" style="float: right;"><br><br>
+         
+            
+              <div style="justify-content: space-between; align-items: center; display: flex;">
+                   <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">117</span>
+
+           <img src="images/icon-up.svg" alt="" style="float: right; margin-left: 100px; margin-top: 15px;"><span style="float: right; color: hsl(163, 72%, 41%); margin-top: 15px;">303%</span>
+                
+          </div>
+            
+            </div>
+          </div>
+
+
+
+          <div class="middle6 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+            <div style="padding: 22px;">
+              <span style="color: var(--follower-color);">Likes</span>
+              <img src="images/icon-twitter.svg" alt="" style="float: right;"><br><br>
+         
+            
+              <div style="justify-content: space-between; align-items: center; display: flex;">
+                   <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">507</span>
+
+           <img src="images/icon-up.svg" alt="" style="float: right; margin-left: 100px; margin-top: 15px;"><span style="float: right; color: hsl(163, 72%, 41%); margin-top: 15px;">553%</span>
+                
+          </div>
+            
+            </div>
+          </div>
+
+
+
+          <div class="middle7 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+            <div style="padding: 22px;">
+              <span style="color: var(--follower-color);">Likes</span>
+              <img src="images/icon-youtube.svg" alt="" style="float: right;"><br><br>
+         
+            
+              <div style="justify-content: space-between; align-items: center; display: flex;">
+                   <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">107</span>
+
+           <img src="images/icon-down.svg" alt="" style="float: right; margin-left: 100px; margin-top: 15px;"><span style="float: right; color: hsl(356, 69%, 56%); margin-top: 15px;">19%</span>
+                
+          </div>
+            
+            </div>
+          </div>
+
+
+
+          <div class="middle8 box" style="color: hsl(228, 34%, 66%); font-weight: bold;">
+            <div style="padding: 22px;">
+              <span style="color: var(--follower-color);">Total Views</span>
+              <img src="images/icon-youtube.svg" alt="" style="float: right;"><br><br>
+         
+            
+              <div style="justify-content: space-between; align-items: center; display: flex;">
+                   <span style="color: var(--heading-color); font-weight: bold; font-size: 30px;">1407</span>
+
+           <img src="images/icon-down.svg" alt="" style="float: right; margin-left: 90px; margin-top: 15px;"><span style="float: right; color: hsl(356, 69%, 56%); margin-top: 15px;">12%</span>
+                
+          </div>
+            
+            </div>
+          </div>
+
+    </div>
+
+
+</div>
+
+<script src="app.js"></script>
+ 
+</body>
+</html>
